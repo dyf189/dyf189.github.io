@@ -45,3 +45,18 @@ notice_outdate:
   style: flat
   limit_day: 365
   position: top
+
+comment:
+  giscus:
+    enable: true
+    repo: dyf189/dyf189.github.io
+    repo-id: R_kgDORKxyLg
+    category: Announcements
+    category-id: DIC_kwDORKxyLs4C2EnQ
+    mapping: pathname
+    reactions-enabled: 1
+    emit-metadata: 0
+    lang: zh-CN
+    theme: 
+      light: light
+      dark: dark
