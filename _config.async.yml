@@ -1,0 +1,47 @@
+zh-Hans:
+  site:
+    title: dyf189的博客
+
+theme:
+  default: style-dark
+
+user:
+  name: dyf189
+  first_name: 的博客
+  last_name: dyf189
+  avatar: https://avatars.githubusercontent.com/u/100421701?v=4
+  describe: 一个网站。
+
+sidebar:
+  social: # 社交地址
+    - name: github
+      icon: fab fa-github
+      url: https://github.com/dyf189
+  info: # 个人信息
+    - key: 邮箱
+      val: gitdyf189@outlook.com
+
+footer:
+  custom_text: <a href="https://dyf189.github.io">dyf189的博客</a> © 2026 by <a href="https://github.com/dyf189">dyf189</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+
+top_bars:
+  - title: 主页
+    url: /
+  - title: 归档
+    url: /archives/
+    noswup: true
+  - title: 关于
+    url: /about/
+    noswup: true
+
+creative_commons:
+  license: by-nc-sa
+  language: deed.zh-hans
+  post: false
+  clipboard: false
+
+notice_outdate:
+  enable: true
+  style: flat
+  limit_day: 365
+  position: top
