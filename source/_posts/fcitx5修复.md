@@ -2,7 +2,10 @@
 layout: post
 title: fcitx5输入法修复记录
 date: 2026-02-25 17:51:37
-tags: linux, fcitx5, ibus
+tags:
+  - linux
+  - fcitx5
+  - ubuntu
 keywords: linux,fcitx5,ibus,输入法
 author: dyf189
 toc: true
@@ -12,9 +15,11 @@ toc: true
 
 将电脑上的ubuntu22升到ubuntu24之后，fcitx5输入法突然不能使用了，开机后无论是键盘还是拼音输入法都不是激活状态
 
-同时炸了的还有SDDM,之后修复后会另写一篇文章
+同时炸了的还有SDDM,之后修复后会另写一篇文章  
+  
+> 补：重新安装SDDM后又回来了，~~所以文章不用写了~~
 
-## 折腾过程
+## 折腾过程  
 
 ### 更换输入法框架
 
@@ -164,4 +169,45 @@ fcitx4我用的是讯飞输入法进行尝试，但是尽管讯飞输入法的�
             "fcitx5" "Fcitx5 (Flexible Input Method Framework5)" "fcitx5" "/usr/locale" "ja:ko:zh:*"
 ```
 
-从错误输出中可以看到fcitx5无法找到一堆模块的缓存，同时报错中也给出了解决方案....吗？
+从错误输出中可以看到fcitx5无法找到一堆模块的缓存，同时报错中也给出了解决方案  
+
+```
+环境变量 QT_IM_MODULE 的值被设为了“fcitx5”而不是“fcitx”。请检查您是否在某个初始化文件中错误的设置了它的值。
+    您可能会在 qt6 程序中使用 fcitx 时遇到问题.
+
+    请使用您发行版提供的工具将环境变量 QT_IM_MODULE 设为 "fcitx" 或者将 `export QT_IM_MODULE=fcitx` 添加到您的 `~/.xprofile` 中。
+```
+
+在之前询问ai过程，ai让我把环境变量设置为fcitx5,很明显正常应该设置为fcitx
+
+### 修复
+
+设置用户变量
+
+```bash
+nano ~/.xprofile
+```
+
+```
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+```
+
+上面的操作理论来讲是行得通的，但是结果并没有成功，于是便修改系统变量
+
+查看bash内容
+
+```bash
+cat /etc/environment
+```
+
+发现为空，便添加以下几行
+
+```
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+```
+
+最后成功修复了
