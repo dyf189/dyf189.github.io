@@ -6,7 +6,9 @@ tags:
   - linux
   - fcitx5
   - ubuntu
-keywords: linux,fcitx5,ibus,输入法
+categories: 
+  - linux
+  - fcitx5
 author: dyf189
 toc: true
 ---

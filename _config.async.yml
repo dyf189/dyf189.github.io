@@ -27,12 +27,16 @@ footer:
 top_bars:
   - title: 主页
     url: /
+  - title: 分类
+    url: /categories/
   - title: 归档
     url: /archives/
     noswup: true
   - title: 关于
     url: /about/
     noswup: true
+  - title: 友情链接
+    url: /links/
 
 creative_commons:
   license: by-nc-sa
@@ -60,3 +64,15 @@ comment:
     theme: 
       light: light
       dark: dark
+
+links:
+  - name: USFrameTeam
+    url: //www.usframeteam.top/
+    image: //www.usframeteam.top/static/pictures/USFLogo.png
+    desc: Minecraft基岩版插件USF开发团队
+
+links_info:
+  name:  dyf189的博客
+  url: https://dyf189.github.io/
+  describe: 小站
+  rule_text: 暂不接受友链申请。

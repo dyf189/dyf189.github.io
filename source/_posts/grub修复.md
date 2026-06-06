@@ -2,8 +2,13 @@
 layout: post
 title: linux+win双系统grub修复记录
 date: 2026-02-09 08:03:37
-tags: linux, grub, windows
-keywords: linux,grub,windows
+tags:
+  - grub
+  - windows
+  - linux
+categories: 
+  - linux
+  - grub
 author: dyf189
 toc: true
 ---
